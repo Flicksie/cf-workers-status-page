@@ -15,23 +15,31 @@ settings:
   dayInHistogramNotOperational: ' incident(s)' # xx incident(s) recorded
 
 monitors:
-  - id: workers-cloudflare-com # unique identifier
-    name: workers.cloudflare.com
-    description: 'You write code. They handle the rest.' # default=empty
-    url: 'https://workers.cloudflare.com/' # URL to fetch
+  - id: cdn # unique identifier
+    name: CDN
+    description: 'Content Delivery' # default=empty
+    url: 'https://cdn.pollux.gg/favicon.png' # URL to fetch
     method: GET # default=GET
     expectStatus: 200 # operational status, default=200
     followRedirect: false # should fetch follow redirects, default=false
 
-  - id: www-cloudflare-com
-    name: www.cloudflare.com
-    description: 'Built for anything connected to the Internet.'
-    url: 'https://www.cloudflare.com'
+  - id: dev-dash
+    name: DEV Dash
+    description: 'Beta Dashboard'
+    url: 'https://hijola.pollux.gg/commands'
     method: GET
     expectStatus: 200
 
-  - id: blog-cloudflare-com
-    name: The Cloudflare Blog
-    url: 'https://blog.cloudflare.com/'
+  - id: dash
+    name: Live Dash
+    description: 'Public Dashboard'
+    url: 'https://beta.pollux.gg/commands'
+    method: GET
+    expectStatus: 200
+    
+  - id: vanilla
+    name: Vanilla Dash
+    description: 'Vanilla Dashboard'
+    url: 'https://vanilla.pollux.gg/commands'
     method: GET
     expectStatus: 200
