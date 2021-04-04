@@ -52,6 +52,12 @@ export async function processCronTrigger(event) {
 
     // Perform a check and measure time
     const requestStartTime = Date.now()
+
+    if (monitor.url.startsWith('botswarm')){
+      const baseURL = `http://${SECRET_IP_[monitor.url.split(':')[1]]}:${monitor.url.split(':')[2]}00`
+      monitor.url = baseURL
+    }
+
     const checkResponse = await fetch(monitor.url, init)
     const requestTime = Math.round(Date.now() - requestStartTime)
 
