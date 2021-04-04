@@ -1,8 +1,8 @@
 settings:
   title: 'Status Page'
-  url: 'https://status-page.eidam.dev' # used for Slack messages
+  url: 'https://status.pollux.gg' # used for Slack messages
   logo: logo-192x192.png # image in ./public/ folder
-  daysInHistogram: 90 # number of days you want to display in histogram
+  daysInHistogram: 30 # number of days you want to display in histogram
   collectResponseTimes: true # collects avg response times from CRON locations
 
   allmonitorsOperational: 'All Systems Operational'
@@ -43,6 +43,14 @@ monitors:
     name: Vanilla Dash
     description: 'Vanilla Dashboard'
     url: 'https://vanilla.pollux.gg/commands'
+    method: GET
+    expectStatus: 200
+    followRedirect: true
+    
+  - id: test
+    name: Test
+    description: 'Bot Cluster 0'
+    url: 'botswarm:ALDEBARAN:66'
     method: GET
     expectStatus: 200
     followRedirect: true
