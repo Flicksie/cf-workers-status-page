@@ -54,7 +54,7 @@ export async function processCronTrigger(event) {
     const requestStartTime = Date.now()
 
     if (monitor.url.startsWith('botswarm')){
-      const baseURL = `http://${SECRET_IP_[monitor.url.split(':')[1]]}:${monitor.url.split(':')[2]}00`
+      const baseURL = `http://${ global["SECRET_IP_"+[monitor.url.split(':')[1]]] }:${monitor.url.split(':')[2]}00`
       monitor.url = baseURL
     }
 
