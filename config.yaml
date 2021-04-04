@@ -21,7 +21,7 @@ monitors:
     url: 'https://cdn.pollux.gg/favicon.png' # URL to fetch
     method: GET # default=GET
     expectStatus: 200 # operational status, default=200
-    followRedirect: false # should fetch follow redirects, default=false
+    followRedirect: true # should fetch follow redirects, default=false
 
   - id: dev-dash
     name: DEV Dash
@@ -29,6 +29,7 @@ monitors:
     url: 'https://hijola.pollux.gg/commands'
     method: GET
     expectStatus: 200
+    followRedirect: true
 
   - id: dash
     name: Live Dash
@@ -36,6 +37,7 @@ monitors:
     url: 'https://beta.pollux.gg/commands'
     method: GET
     expectStatus: 200
+    followRedirect: true
     
   - id: vanilla
     name: Vanilla Dash
@@ -43,3 +45,4 @@ monitors:
     url: 'https://vanilla.pollux.gg/commands'
     method: GET
     expectStatus: 200
+    followRedirect: true
