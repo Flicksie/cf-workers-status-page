@@ -48,9 +48,17 @@ monitors:
     followRedirect: true
     
   - id: test
-    name: Test
+    name: Cluster A
     description: 'Bot Cluster 0'
-    url: 'botswarm:ALDEBARAN:66'
+    url: 'botswarm:ALDEBARAN:6600'
+    method: GET
+    expectStatus: 200
+    followRedirect: true
+    
+  - id: test2
+    name: Cluster B
+    description: 'Bot Cluster 1'
+    url: 'botswarm:ALDEBARAN:6601'
     method: GET
     expectStatus: 200
     followRedirect: true
